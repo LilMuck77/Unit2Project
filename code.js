@@ -35,7 +35,7 @@ $(document).ready(function () {
                 max: 4,
             }
     }
-
+    //error messages
     var myMessages = {
         guessNum:
             {
@@ -60,8 +60,6 @@ $(document).ready(function () {
 
         var userGuess = $("#guessNum").val().toString();
         //repeating numbers loop
-
-
         for (var i = 0; i < 4; i++) {
             if (userGuess[i] === userGuess[i + 1]) {
                 $("#guessOutput").text("Guess can't have repeating numbers.");
@@ -80,6 +78,7 @@ $(document).ready(function () {
 
 
             } else {
+                //display bulls and cows count.
                 for (var k = 0; k < 4; k++) {
                     if (userGuess[k] === secretNumber[k]) {
                         bulls++;
@@ -100,7 +99,7 @@ $(document).ready(function () {
         }
 
     }
-
+    //reveal button for teacher
     function showSecretNumber(event) {
         event.preventDefault();
         $("#winnerMessage").text("The secret number is: " + secretNumber);
