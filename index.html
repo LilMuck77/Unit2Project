@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Bulls And Cows</title>
+
+</head>
+<body>
+<div class="container w-50">
+    <h1>Bulls And Cows</h1>
+    <br>
+    <form id="form">
+        <fieldset>
+            <legend>Guess The Secret Number</legend>
+            <label for="guessNum">Guess Number</label>
+            <input name="guessNum" id="guessNum" type="number" autofocus>
+            <br>
+            <span id="guessOutput"></span>
+            <br>
+            <span id="ww"></span>
+
+
+        </fieldset>
+        <button class="btn btn-primary" id="submitGuess">Submit Guess</button>
+        <button class="btn btn-primary" id="showSecret">Show Secret</button>
+        <br>
+        <span id="winnerMessage"></span>
+        <br>
+        <span id="secretNumOutput"></span>
+    </form>
+</div>
+
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+<script src="code.js"></script>
+
+</html>
