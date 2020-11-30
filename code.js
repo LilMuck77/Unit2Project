@@ -31,8 +31,8 @@ $(document).ready(function () {
             {
                 required: true,
                 digits: true,
-                min: 4,
-                max: 4,
+                minlength: 4,
+                maxlength: 4,
             }
     }
     //error messages
@@ -41,8 +41,8 @@ $(document).ready(function () {
             {
                 required: "This field is required.",
                 digits: "Please enter a four digit number.",
-                min: "Guess must contain 4 digits.",
-                max: "Guess must contain 4 digits.",
+                minlength: "Guess must contain 4 digits.",
+                maxlength: "Guess must contain 4 digits.",
             }
     }
 
@@ -61,20 +61,23 @@ $(document).ready(function () {
         var userGuess = $("#guessNum").val().toString();
         //repeating numbers loop
         for (var i = 0; i < 4; i++) {
-            if (userGuess[i] === userGuess[i + 1]) {
-                $("#guessOutput").text("Guess can't have repeating numbers.");
+            if (userGuess.length === 4 && userGuess && userGuess[i] === userGuess[i + 1]) {
+                $("#guessOutput").html("Guess can't have repeating numbers. <br> Please enter again.");
                 wrongGuesses = 1;
+                i = 0;
+                userGuess = '';
+                break;
 
             }
 
         }
 
 
-        if (wrongGuesses === 0) {
+        if (userGuess.length === 4 && userGuess && wrongGuesses === 0) {
             if (userGuess === secretNumber) {
                 guessCount++;
                 $("#winnerMessage").html("Congratulations, you guessed the secret number.<br> The secret number was: " + secretNumber
-                + "<br> Guess Attempts = " + guessCount);
+                    + "<br> Guess Attempts = " + guessCount);
 
 
             } else {
@@ -89,7 +92,7 @@ $(document).ready(function () {
 
                 guessCount++;
                 $("#guessOutput").html(`Guess Attempt # ${guessCount} <br>
-                  Users guess = ${userGuess} <br> Bulls = ${bulls} <br> Cows = ${cows}`);
+                  Users guess = ${userGuess} <br> Bulls = ${bulls}  Cows = ${cows}`);
                 bulls = 0;
                 cows = 0;
 
@@ -97,8 +100,9 @@ $(document).ready(function () {
 
 
         }
-
+        wrongGuesses = 0;
     }
+
     //reveal button for teacher
     function showSecretNumber(event) {
         event.preventDefault();

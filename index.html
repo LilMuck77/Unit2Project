@@ -9,14 +9,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
 
     <title>Bulls And Cows</title>
 
 </head>
 <body>
+<style>
+    body {
+        background-image: url("https://www.wikihow.com/images/thumb/2/22/Identify-Black-Hereford-Cattle-Step-1.jpg/aid1181626-v4-728px-Identify-Black-Hereford-Cattle-Step-1.jpg");
+
+        background-size: 110%;
+    }
+</style>
 <div class="container w-50">
     <h1>Bulls And Cows</h1>
-    <br>
     <form id="form">
         <fieldset>
             <legend>Guess The Secret Number</legend>
@@ -25,7 +32,7 @@
             <br>
             <span id="guessOutput"></span>
             <br>
-            <span id="ww"></span>
+            <br>
 
 
         </fieldset>
@@ -35,6 +42,16 @@
         <span id="winnerMessage"></span>
         <br>
         <span id="secretNumOutput"></span>
+        <br>
+        <h4>Rules:</h4>
+        <p id="rules">To win you must guess the secret number. <br>
+            Valid guesses are exactly 4 digits. <br>
+            Invalid guesses include: Duplicating numbers (ex. 6772), not a 4 digit guess, <br>
+            and anything that's not a number.
+            <br>If you get one bull it means you have one of the four digits in the correct spot.
+            <br> If you get one cow it means you have one of the four digits correct but, not in the correct spot.
+            <br>And so on if you get more bulls and cows. </p>
+        <h5>Good Luck!</h5>
     </form>
 </div>
 

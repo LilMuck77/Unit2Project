@@ -1,0 +1,16 @@
+#rules {
+    color: white;
+}
+h4{
+    color: white;
+}
+h5{
+    color: #1bf33c;
+}
+#winnerMessage{
+    color: lightskyblue;
+}
+h1{
+    font-family: "Times New Roman";
+    text-decoration: underline;
+}
